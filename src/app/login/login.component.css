@@ -1,0 +1,17 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007ee5;
+}
+.child{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.main{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #007ee5;
+}

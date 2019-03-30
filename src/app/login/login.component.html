@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="parent">
+    <div class="child">
+      <div class="card" style="width:22rem;">
+        <div class="card-header" style="background-color:#f94877">
+
+          <h5 class="card-title" style="text-align:center;">GMI Tehnologies</h5>
+          <app-alerts [success]="success" [message]="text"></app-alerts>
+        </div>
+        <div class="card-body">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm" placeholder="Enter Username" [(ngModel)]="username">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+            </div>
+            <input type="password" [(ngModel)]="password" class="form-control" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm" placeholder="Enter Password">
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-danger" type="reset" style="margin-right:80px;">ForgotPassword?</button>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-success" type="submit" style="margin-left:45px;" (click)="login()">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

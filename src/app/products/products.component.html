@@ -1,0 +1,48 @@
+<!-- <app-sidenav></app-sidenav> -->
+<app-headercomponent [title]="'PRODUCTS'"></app-headercomponent>
+
+<div class="row ">
+    <div class="col-4">
+        <app-scard [count]="1000" [title]="'TOTAL'" [iconClass]="'fas fa-boxes'" [color]="'#34465d'">
+        </app-scard>
+    </div>
+    <div class="col-4">
+        <app-scard [count]="200" [title]="'SOLD'" [iconClass]="'fas fa-shipping-fast'" [color]="'#00c300'">
+        </app-scard>
+    </div>
+    <div class="col-4">
+        <app-scard [count]="800" [title]="'INVENTORY'" [iconClass]="'fas fa-warehouse'" [color]="'#ff3300'">
+        </app-scard>
+    </div>
+</div>
+<div class="container">
+    <button class="btn btn-primary" (click)="navigateToAdd(2498)">Add Product</button>
+</div>
+<div class="row">
+    <app-shopping [imgurl]="'assets/01.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/02.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/03.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/04.jpg'"></app-shopping>
+</div>
+
+<div class="row" style="margin-top:30px">
+    <app-shopping [imgurl]="'assets/05.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/06.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/07.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/08.jpg'"></app-shopping>
+</div>
+
+<div class="row" style="margin-top:30px">
+    <app-shopping [imgurl]="'assets/09.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/10.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/11.jpg'"></app-shopping>
+    <app-shopping [imgurl]="'assets/12.jpg'"></app-shopping>
+</div>
+
+<!-- <app-shopping></app-shopping> -->
+
+<div class="row">
+    <div class="col-8">
+        <app-usertable [data]="products" [tableHeaders]="tableHeaders"></app-usertable>
+    </div>
+</div>

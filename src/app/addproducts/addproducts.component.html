@@ -1,0 +1,85 @@
+<!-- <app-sidenav></app-sidenav> -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>ADD PRODUCTS</h3>
+        <form [formGroup]="addProducts" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" formControlName="productName" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+            <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+              <div *ngIf="f.productName.errors.required">Product Name is required</div>
+              <div *ngIf="f.productName.errors.minlength">Min length should be atleast 2</div>
+              <div *ngIf="f.productName.errors.maxlength">Max length should not exceed 12</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Code</label>
+            <input type="text" formControlName="productCode" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.productCode.errors }" />
+            <div *ngIf="submitted && f.productCode.errors" class="invalid-feedback">
+              <div *ngIf="f.productCode.errors.required">Product Code is required</div>
+              <div *ngIf="f.productCode.errors.minlength">Min length should be atleast 2</div>
+              <div *ngIf="f.productCode.errors.maxlength">Max length should not exceed 12</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="text" formControlName="productPrice" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.productPrice.errors }" />
+            <div *ngIf="submitted && f.productPrice.errors" class="invalid-feedback">
+              <div *ngIf="f.productPrice.errors.required">Product Price is required</div>
+              <div *ngIf="f.productPrice.errors.minlength">Min length should be atleast 2</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" formControlName="category">
+              <option *ngFor="let cat of category">{{cat}}</option>
+            </select>
+            <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+              <div *ngIf="f.category.errors.required">Category is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Sub-Category</label>
+            <select class="form-control" formControlName="subCategory">
+              <option *ngFor="let sub of subCategory[getSelectedCategory()]">{{sub}}</option>
+            </select>
+            <div *ngIf="submitted && f.subCategory.errors" class="invalid-feedback">
+              <div *ngIf="f.subCategory.errors.required">Sub Category is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Upload Image</label>
+            <input type="file" formControlName="productImage" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.productImage.errors }" />
+            <div *ngIf="submitted && f.productImage.errors" class="invalid-feedback">
+              <div *ngIf="f.productImage.errors.required">Product Image is required</div>
+              <div *ngIf="f.productImage.errors.pattern">Invalid Image Type</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Product Dimensions</label>
+            <input type="text" formControlName="productDimension" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.productDimension.errors }" />
+            <div *ngIf="submitted && f.productDimension.errors" class="invalid-feedback">
+              <div *ngIf="f.productDimension.errors.required">Product Dimensions are required</div>
+              <!-- <div *ngIf="f.productDimension.errors.pattern">Invalid Image Type</div> -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Gift Wrap</label><br>
+            <input type="radio" name="giftWrap" value="no" checked><label>No</label>
+            <input type="radio" name="giftWrap" value="yes" style="margin-left:15px"><label>Yes</label>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">ADD</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

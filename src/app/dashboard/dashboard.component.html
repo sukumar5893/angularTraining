@@ -1,0 +1,37 @@
+<!-- <app-sidenav></app-sidenav> -->
+<div class="whole">
+  <div>
+    <app-headercomponent [title]="'Dashboard'"></app-headercomponent>
+  </div>
+  <div class="row bgColor">
+    <div class="col-3">
+      <app-scard [count]="36" [title]="'Users'" [iconClass]="'fa fa-users'" [color]="'#34465d'"></app-scard>
+    </div>
+    <div class="col-3">
+      <app-scard [count]="59" [title]="'Orders'" [iconClass]="'fa fa-cart-plus'" [color]="'#00c300'"></app-scard>
+    </div>
+    <div class="col-3">
+      <app-scard [count]="24" [title]="'Requests'" [iconClass]="'fa fa-volume-control-phone'" [color]="'#ff3300'">
+      </app-scard>
+    </div>
+    <div class="col-3">
+      <app-scard [count]="98" [title]="'Delivery'" [iconClass]="'fa fa-truck'" [color]="'#0077b5'"></app-scard>
+    </div>
+  </div><br><br>
+
+  <div class="row offset-2 col-8">
+    <div>
+      <app-analytics [amount]="11000" [labelName]="'SOLD'" [color]="'#00c300'"></app-analytics>
+    </div>
+    <div>
+      <app-analytics [amount]="2000" [labelName]="'MARKETING'" [color]="'#ff0084'"></app-analytics>
+    </div>
+    <div>
+      <app-analytics [amount]="1000" [labelName]="'LOGISTICS'" [color]="'#410093'"></app-analytics>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <app-usertable [data]="products" [tableHeaders]="tableHeaders"></app-usertable>
+  </div>
+</div>

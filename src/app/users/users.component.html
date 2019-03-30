@@ -1,0 +1,35 @@
+<!-- <app-sidenav></app-sidenav> -->
+<app-headercomponent [title]="'USERS'"></app-headercomponent>
+<br>
+<!-- <div class="row offset-2 col-8">
+  <div>
+    <app-analytics [amount]="users.length" [labelName]="'TOTAL'" [color]="'#00c300'"></app-analytics>
+  </div>
+  <div>
+    <app-analytics [amount]="getActive()" [labelName]="'ACTIVE'" [color]="'#ff0084'"></app-analytics>
+  </div>
+  <div>
+    <app-analytics [amount]="getInActive()" [labelName]="'INACTIVE'" [color]="'#410093'"></app-analytics>
+  </div>
+</div> -->
+
+<div class="row ">
+  <div class="col-4">
+    <app-scard [count]="users.length" [title]="'TOTAL'" [iconClass]="'fa fa-users'" [color]="'#34465d'"></app-scard>
+  </div>
+  <div class="col-4">
+    <app-scard [count]="getActive()" [title]="'ACTIVE'" [iconClass]="'fa fa-user'" [color]="'#00c300'"></app-scard>
+  </div>
+  <div class="col-4">
+    <app-scard [count]="getInActive()" [title]="'INACTIVE'" [iconClass]="'fa fa-user'" [color]="'#ff3300'">
+    </app-scard>
+  </div>
+</div>
+
+<div class="col-8">
+  <app-usertable [data]="users" [tableHeaders]="tableHeaders"></app-usertable>
+</div>
+
+<div class="container">
+  <button class="btn btn-primary" (click)="navigateToUser(2498)">User</button>
+</div>
